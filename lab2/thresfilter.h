@@ -16,11 +16,10 @@ struct thread_data{
 	int xsize, ysize, started_threads;
 	int* local_sum;
 	char *src;
+	float *global_sum;
 };
 
 void calc_part(int* part_start, int* part_length, int me, int NUM_THREADS, int ysize);
-//void thresfilter(const int xsize, const int ysize, pixel* src);
-
 int threshfilter_part_1(int xsize, int part_start, int part_length, pixel* src);
-void threshfilter_part_2(int xsize, int part_start, int part_length, pixel* src, int sum);
+void threshfilter_part_2(int xsize, int part_start, int part_length, pixel* src, float *sum, int me);
 #endif

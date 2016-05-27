@@ -23,6 +23,5 @@ void distrwork(MPI_Comm com, pixel* local, pixel* src, const int xsize,
 void blurfilter(const int xsize, const int ysize, pixel* src, const int radius,
 				const double *w, const int ydiff, const int ylength, 
  				const int datalength);
-void returnparts(MPI_Comm com, int me, int problemstart[],int partstart[],
-					int partlength[]);
+int write_txt (const char* fname, const double time, const int np);
 #endif

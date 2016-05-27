@@ -104,26 +104,6 @@ void calclines(int buff[], int problemstart[], int problemlength[],
 		}
 	}
 }
-/*
-void distrwork(MPI_Comm com, pixel* local, pixel* src, const int xsize,
- 				int problemstart[], int problemlength[],int me, int np, MPI_Datatype _MPI_Pixel,MPI_Status status){
-	//Allocate memory
-	local = malloc(3*sizeof(char)*xsize*problemlength[me]);
-	//Distribute work
-	if(me == 0){
-		int i;
-		for(i=1;i<np;i++){ 	
-			MPI_Send(&(src[problemstart[i]*xsize]), xsize*problemlength[i], 
-						_MPI_Pixel, i, 10, com);
-
-		}
-		memcpy(local, src, problemlength[0]*xsize*3);
-	}else{	
-		MPI_Recv(local, xsize*problemlength[me], _MPI_Pixel, 0, 10, com, &status);
-		printf( "From P%d, error %d\n", status.MPI_SOURCE, status.MPI_ERROR );
-	}
-}
-*/
 
 void blurfilter(const int xsize, const int ysize, pixel* src, const int radius, const double *w, const int ydiff, const int ylength, const int datalength){
 	int x,y,x2,y2, wi;
@@ -190,8 +170,23 @@ void blurfilter(const int xsize, const int ysize, pixel* src, const int radius, 
 	}
 }
 
-void returnparts(MPI_Comm com, int me, int problemstart[],int partstart[],
-					int partlength[]){
+int write_txt (const char* fname, const double time, const int np) {
 
-					printf("I'm %d!\n",me);}
+  FILE * fp;
+  int errno = 0;
+
+  if (fname == NULL) fname = "\0";
+  	fp = fopen (fname, "a");
+  if (fp == NULL) {
+    fprintf (stderr, "write_txt failed to open %s: %s\n", fname,strerror (errno));
+    return 1;
+  }
+  
+  fprintf(fp, "%d %f \n", np, time);
+  if (fclose (fp) == EOF) {
+    perror ("Close failed");
+    return 3;
+  }
+  return 0;
+}
 
