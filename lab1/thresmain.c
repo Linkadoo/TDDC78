@@ -37,7 +37,7 @@ int main (int argc, char ** argv) {
 	
     //Create mpi structure
     pixel item;
-
+	
 	MPI_Datatype pixel_mpi;
 	int block_lengths [] = {1 , 1, 1};
 	MPI_Datatype block_types [] = {MPI_UNSIGNED_CHAR,MPI_UNSIGNED_CHAR,MPI_UNSIGNED_CHAR};
@@ -55,7 +55,7 @@ int main (int argc, char ** argv) {
 
 	MPI_Type_commit( &pixel_mpi);
 	//STOP Create mpi structure
-	
+
     /* Take care of the arguments */
 	for(imagecounter = 0; imagecounter<4; imagecounter++)
 	{

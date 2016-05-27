@@ -23,6 +23,7 @@ int main (int argc, char ** argv) {
 	
 	
 	//------------ Initiation and declatarion of MPI stuff  -------------
+	fprintf(stderr, "haj\n");
 	MPI_Init(&argc,&argv);
 	MPI_Status status;
 	MPI_Comm com = MPI_COMM_WORLD;
