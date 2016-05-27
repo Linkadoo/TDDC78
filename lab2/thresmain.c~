@@ -72,22 +72,22 @@ int main (int argc, char ** argv) {
 	     switch(imagecounter){
 		    case 0: 
 		    imagename = "im1.ppm";
-			filename = "im1thres.txt";
+			filename = "im1blur.txt";
 			outfile = "test1.ppm";
 			break;
 			case 1: 
 			imagename = "im2.ppm";
-			filename = "im2thres.txt";
+			filename = "im2blur.txt";
 			outfile = "test2.ppm";
 			break;
 			case 2: 
 			imagename = "im3.ppm";
-			filename = "im3thres.txt";
+			filename = "im3blur.txt";
 			outfile = "test3.ppm";
 			break;
 			case 3: 
 			imagename = "im4.ppm";
-			filename = "im4thres.txt";
+			filename = "im4blur.txt";
 			outfile = "test4.ppm";
 			break;
 		}

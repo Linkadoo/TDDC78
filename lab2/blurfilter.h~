@@ -25,5 +25,5 @@ void blurfilter_part_2(const int xsize, const int ysize, pixel* src, const int r
 
 void calc_part(int *part_start, int *part_length, int me,
 				 int NUM_THREADS, int ysize);
-int write_txt (const char* fname, const int radius, const double time, const int np);
+int write_txt (const char* fname, const double time, const int np);
 #endif

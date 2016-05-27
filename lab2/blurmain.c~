@@ -144,7 +144,7 @@ int main (int argc, char ** argv) {
       				exit(1);
 			}
 			if(write_txt (filename, radius, ((stop.tv_sec  - start.tv_sec) +
-	  				 1e-9*(stop.tv_nsec  - start.tv_nsec)), NUM_THREADS ) != 0)
+	  				 1e-9*(stop.tv_nsec  - start.tv_nsec)), nt ) != 0)
 			  		exit(1);
 		}
 	}

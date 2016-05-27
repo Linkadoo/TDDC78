@@ -1,4 +1,4 @@
-CC = mpicc.mpich2
+CC = mpicc
 CFLAGS = 
 
 LFLAGS= -lpthread -lrt -lm

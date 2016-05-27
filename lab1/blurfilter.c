@@ -170,19 +170,19 @@ void blurfilter(const int xsize, const int ysize, pixel* src, const int radius, 
 	}
 }
 
-int write_txt (const char* fname, const double time, const int np) {
+int write_txt (const char* fname, const int radius, const double time, const int np) {
 
   FILE * fp;
   int errno = 0;
 
   if (fname == NULL) fname = "\0";
-  	fp = fopen (fname, "a");
+  fp = fopen (fname, "a");
   if (fp == NULL) {
     fprintf (stderr, "write_txt failed to open %s: %s\n", fname,strerror (errno));
     return 1;
   }
   
-  fprintf(fp, "%d %f \n", np, time);
+  fprintf(fp, "%d %d %f \n", np, radius, time);
   if (fclose (fp) == EOF) {
     perror ("Close failed");
     return 3;

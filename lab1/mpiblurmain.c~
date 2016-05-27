@@ -52,8 +52,7 @@ int main (int argc, char ** argv) {
 	
 	/* Take care of the arguments */
 	if(argc != 2){
-		if(me==0) 
-			fprintf(stderr, "Usage: %s write_images(0 or 1)\n", argv[0]);
+		if(me==0) fprintf(stderr, "Usage: %s write_images(0 or 1)\n", argv[0]);
 		MPI_Finalize();
 		exit(1);
 	}

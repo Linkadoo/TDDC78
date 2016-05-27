@@ -56,7 +56,7 @@ int write_txt (const char* fname, const double time, const int np) {
   if (fname == NULL) fname = "\0";
   	fp = fopen (fname, "a");
   if (fp == NULL) {
-    printf ( "write_txt failed to open %s: %s\n", fname,strerror (errno));
+    fprintf (stderr, "write_txt failed to open %s: %s\n", fname,strerror (errno));
     return 1;
   }
   
